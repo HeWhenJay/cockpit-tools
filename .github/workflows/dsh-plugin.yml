@@ -1,0 +1,20 @@
+name: DSH plugin checks
+
+on:
+  push:
+    paths:
+      - 'dsh-plugin/**'
+      - '.github/workflows/dsh-plugin.yml'
+  pull_request:
+    paths:
+      - 'dsh-plugin/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm test --prefix dsh-plugin

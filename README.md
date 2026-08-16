@@ -470,6 +470,10 @@ QQ 交流群、微信群或新建的 Telegram 畅聊群都可以加入。
 
 ---
 
+## DSH 插件适配
+
+本 fork 增加了一个独立的 `dsh-plugin/`：把 API Service 的本地多渠道路由能力适配到 DeepSeek Harness。它默认只监听 `127.0.0.1`，可显式切换到 `0.0.0.0` 供可信局域网共享；API Key 只从本机环境变量读取，不写入配置示例、日志或仓库。普通低价中转站可配置为优先渠道，正常价格的官方 API 或其他账号可标记为 `backup` 保底。模型不限 GPT，OpenAI-compatible 渠道可以共同服务 GPT、Claude、Gemini、DeepSeek、Qwen、Kimi、Grok 等模型。详见 [`dsh-plugin/README.md`](dsh-plugin/README.md) 和 [`docs/DSH_PLUGIN_SCOPE.md`](docs/DSH_PLUGIN_SCOPE.md)。
+
 ## 许可证
 
 本项目默认采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可协议（署名-非商业性使用-相同方式共享）。
